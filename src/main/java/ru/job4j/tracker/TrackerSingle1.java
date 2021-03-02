@@ -6,5 +6,5 @@ package ru.job4j.tracker;
  */
 public enum TrackerSingle1 {
     INSTANCE;
-    public Tracker tracker = new Tracker();
+    public MemTracker tracker = new MemTracker();
 }

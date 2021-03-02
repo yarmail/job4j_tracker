@@ -19,7 +19,7 @@ interface UserAction {
      * @param input объект типа Input
      * @param tracker объект типа Tracker
      */
-    void execute(Input input, Tracker tracker, Consumer<String> output);
+    void execute(Input input, MemTracker tracker, Consumer<String> output);
     /**
      * Метод возвращает информацию о данном пункте меню.
      * @return Строка меню

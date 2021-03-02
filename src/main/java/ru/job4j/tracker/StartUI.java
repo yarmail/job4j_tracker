@@ -10,10 +10,10 @@ import java.util.function.Consumer;
 
 public class StartUI {
     private final Input input;
-    private final Tracker tracker;
+    private final MemTracker tracker;
     private final Consumer<String> output;
 
-    public StartUI(Input input, Tracker tracker, Consumer<String> output) {
+    public StartUI(Input input, MemTracker tracker, Consumer<String> output) {
         this.input = input;
         this.tracker = tracker;
         this.output = output;
@@ -29,6 +29,14 @@ public class StartUI {
     }
 
     public static void main(String[] args) {
-        new StartUI(new ValidateInput(new ConsoleInput()), new Tracker(), System.out::println).init();
+        Input validate = new ValidateInput(new ConsoleInput());
+
+        try (Store tracker = new SqlTracker()){
+            tracker.init();
+            UserAction[] actions = {new CreateAction()};
+            new StartUI().init(validate,tracker, actions);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

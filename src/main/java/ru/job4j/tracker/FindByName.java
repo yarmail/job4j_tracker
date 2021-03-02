@@ -10,7 +10,7 @@ public class FindByName extends BaseAction {
     }
 
     @Override
-    public void execute(Input input, Tracker tracker, Consumer<String> output) {
+    public void execute(Input input, MemTracker tracker, Consumer<String> output) {
         output.accept(String.format("%s%n", "------------ Find Order by Name --------------"));
         String name = input.ask("Please enter the Name of the order for find: ");
 

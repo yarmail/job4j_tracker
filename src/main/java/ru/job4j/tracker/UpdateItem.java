@@ -9,7 +9,7 @@ public class UpdateItem extends BaseAction {
     }
 
     @Override
-    public void execute(Input input, Tracker tracker, Consumer<String> output) {
+    public void execute(Input input, MemTracker tracker, Consumer<String> output) {
         output.accept(String.format("%s%n", "------------ Edit Order --------------"));
         String id = input.ask("Please enter the ID of the order for edit");
         String name = input.ask("Please enter the new name of the order");

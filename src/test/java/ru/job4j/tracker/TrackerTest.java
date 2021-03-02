@@ -37,7 +37,7 @@ public class TrackerTest {
      */
     @Test
     public void addTest() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         long created = System.currentTimeMillis();
         Item item = new Item("test1", "test1Description", created);
         tracker.add(item);
@@ -52,7 +52,7 @@ public class TrackerTest {
      */
     @Test
     public void findByIdTest() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         long created = System.currentTimeMillis();
         Item item = new Item("test1", "test1Description", created);
         tracker.add(item);
@@ -68,7 +68,7 @@ public class TrackerTest {
      */
     @Test
     public void findAllTest() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         long created1 = System.currentTimeMillis();
         long created2 = System.currentTimeMillis();
         long created3 = System.currentTimeMillis();
@@ -91,7 +91,7 @@ public class TrackerTest {
      */
     @Test
     public void findByNameTest() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         long created1 = System.currentTimeMillis();
         long created2 = System.currentTimeMillis();
         long created3 = System.currentTimeMillis();
@@ -114,7 +114,7 @@ public class TrackerTest {
      */
     @Test
     public void deleteTest() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         long created1 = System.currentTimeMillis();
         long created2 = System.currentTimeMillis();
         long created3 = System.currentTimeMillis();
@@ -139,7 +139,7 @@ public class TrackerTest {
      */
     @Test
     public void replaceTest() {
-        Tracker tracker = new Tracker();
+        MemTracker tracker = new MemTracker();
         long created1 = System.currentTimeMillis();
         long created2 = System.currentTimeMillis();
         long created3 = System.currentTimeMillis();

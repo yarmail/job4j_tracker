@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  * items = место для хранения заявок
  */
 
-public class Tracker {
+public class MemTracker {
 
     private final List<Item> items = new ArrayList<>(0);
 

@@ -9,7 +9,7 @@ public class DeleteItem extends BaseAction {
     }
 
     @Override
-    public void execute(Input input, Tracker tracker, Consumer<String> output) {
+    public void execute(Input input, MemTracker tracker, Consumer<String> output) {
         output.accept(String.format("%s%n", "------------ Delete Order --------------"));
         String id = input.ask("Please enter the ID of the order for delete");
         boolean result = tracker.delete(id);

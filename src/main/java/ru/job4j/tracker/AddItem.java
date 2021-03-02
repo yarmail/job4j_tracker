@@ -10,7 +10,7 @@ public class AddItem extends BaseAction {
     }
 
     @Override
-    public void execute(Input input, Tracker tracker, Consumer<String> output) {
+    public void execute(Input input, MemTracker tracker, Consumer<String> output) {
         output.accept(String.format("%s%n", "------------ Add new Order --------------"));
         String name = input.ask("Please enter the name of the order: ");
         String desc = input.ask("Please enter the description of the order: ");

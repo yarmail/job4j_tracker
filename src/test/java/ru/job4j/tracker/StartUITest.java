@@ -19,7 +19,7 @@ public class StartUITest {
     /**
      * Для рефакторинга переносим повторяющиеся переменные в поля класса
      */
-    private final Tracker tracker = new Tracker();
+    private final MemTracker tracker = new MemTracker();
     private final Item item = tracker.add(new Item("test name", "desc", 12345));
 
     /**

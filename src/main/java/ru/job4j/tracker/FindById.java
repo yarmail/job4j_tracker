@@ -9,7 +9,7 @@ public class FindById extends BaseAction {
     }
 
     @Override
-    public void execute(Input input, Tracker tracker, Consumer<String> output) {
+    public void execute(Input input, MemTracker tracker, Consumer<String> output) {
         output.accept(String.format("%s%n", "------------ Find Order by ID --------------"));
         String id = input.ask("Please enter the ID of the order for find: ");
         Item result = tracker.findById(id);

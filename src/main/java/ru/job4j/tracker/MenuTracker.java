@@ -7,11 +7,11 @@ import java.util.function.Consumer;
 public class MenuTracker {
 
     private Input input;
-    private Tracker tracker;
+    private MemTracker tracker;
     private final Consumer<String> output;
     private List<UserAction> actions = new ArrayList<>();
 
-    public MenuTracker(Input input, Tracker tracker, Consumer<String> output) {
+    public MenuTracker(Input input, MemTracker tracker, Consumer<String> output) {
         this.input = input;
         this.tracker = tracker;
         this.output = output;

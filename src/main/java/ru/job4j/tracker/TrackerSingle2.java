@@ -9,7 +9,7 @@ package ru.job4j.tracker;
  */
 public class TrackerSingle2 {
     private static TrackerSingle2 instance;
-    public Tracker tracker = new Tracker();
+    public MemTracker tracker = new MemTracker();
 
     public static TrackerSingle2 getInstance() {
         if (instance == null) {
