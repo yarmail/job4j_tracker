@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package tracker;
 
 /**
  * interface Input
@@ -11,8 +11,7 @@ interface Input {
      * The ask method asks the user for information.
      * Метод ask запрашивает у пользователя информацию
      */
-    String ask(String question);
-
-    int ask(String question, int[] range);
-
+    String askStr(String question);
+    int askInt(String question);
+    int askInt(String question, int max);
 }

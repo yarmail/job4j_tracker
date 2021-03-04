@@ -1,20 +1,15 @@
-package ru.job4j.tracker;
+package tracker;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-/**
- * Class Tracker is a wrapper over an array
- * Класс Трекер - это обертка над массивом
- * items = место для хранения заявок
- */
-
 public class MemTracker {
-
+    /**
+     * Массив для хранения заявок
+     */
     private final List<Item> items = new ArrayList<>(0);
-
 
     /**
      * Generating a unique key based on the current time and a random number
@@ -26,7 +21,10 @@ public class MemTracker {
      * 3) привести к общему типу long и сложить
      * 4) перевести в  String (в условиях данной задачи)
      *
-     * @return String Id
+     * Нужно проверить:
+     * Возможная проблема может заключаться в том, что диапазон
+     * значений Math.random() может быть от [0, 1) и продумать,
+     * что будет при 0. Возможно следует добавить маленькую величину
      */
     private String generateId() {
         long unixTime = System.currentTimeMillis();
@@ -58,7 +56,15 @@ public class MemTracker {
                 .orElse(-1);
     }
 
-/* старая версия
+    public Item findById(String id) {
+        Item result = null;
+        int i = indexOf(id);
+        if (i > -1) {
+            result = items.get(i);
+        }
+        return result;
+    }
+    /* другая версия
     public Item findById(String id) {
         Item result = null;
         if (!this.items.isEmpty()) {
@@ -69,16 +75,7 @@ public class MemTracker {
         }
         return result;
     }
-*/
-
-    public Item findById(String id) {
-        Item result = null;
-        int i = indexOf(id);
-        if (i > -1) {
-            result = items.get(i);
-        }
-        return result;
-    }
+    */
 
     public List<Item> findByName(String key) {
         return this.items.stream()
@@ -86,20 +83,6 @@ public class MemTracker {
                 .collect(Collectors.toList());
         }
 
-
-    /*
-        public boolean delete(String id) {
-            boolean result = false;
-            for (int i = 0; i < this.items.size(); i++) {
-                if (this.items.get(i).getId().equals(id)) {
-                    items.remove(i);
-                    result = true;
-                    break;
-                }
-            }
-            return result;
-        }
-    */
     public boolean delete(String id) {
         boolean result = false;
         int i = indexOf(id);
@@ -109,20 +92,6 @@ public class MemTracker {
         }
         return result;
     }
-/*
-    public boolean replace(String id, Item item) {
-        boolean result = false;
-        for (int i = 0; i < this.items.size(); i++) {
-            if (this.items.get(i).getId().equals(id)) {
-                items.set(i, item);
-                item.setId(id);
-                result = true;
-                break;
-            }
-        }
-        return result;
-    }
-*/
 
     public boolean replace(String id, Item item) {
         boolean result = false;

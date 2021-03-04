@@ -1,4 +1,4 @@
-package ru.job4j.tracker;
+package tracker;
 
 import java.util.List;
 
