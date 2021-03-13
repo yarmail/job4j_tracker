@@ -1,5 +1,6 @@
 package tracker;
 
+import java.sql.Connection;
 import java.util.function.Consumer;
 
 public class StartUI {
@@ -22,6 +23,7 @@ public class StartUI {
             run = action.execute(input, tracker, output);
         }
     }
+
     private void showMenu(UserAction[] actions) {
         output.accept("Menu." + System.lineSeparator());
         for (int index = 0; index < actions.length; index++) {
