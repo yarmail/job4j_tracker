@@ -15,8 +15,10 @@ import static java.lang.Integer.*;
  * Для того, чтобы мы могли подключаться
  * к разным базам нам нужно вынести настройки в файл.
  *
+ * ВНИМАНИЕ НА ТЕСТОВЫЙ МЕТОД SqlTrackerTest
  * Тестовый метод даного класса является интеграционным и
- * удовлетворяет принципу FIRST
+ * удовлетворяет принципу FIRST.
+ * Там много интересного с откатыванием события.
  */
 public class SqlTracker implements Store, AutoCloseable {
     private Connection connection;
@@ -56,6 +58,7 @@ public class SqlTracker implements Store, AutoCloseable {
             connection.close();
         }
     }
+
 
     @Override
     public Item add(Item item) {

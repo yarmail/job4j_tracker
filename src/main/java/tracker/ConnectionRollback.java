@@ -9,7 +9,7 @@ import java.sql.SQLException;
  *
  * Теперь нам нужно решить проблему управления
  * методами Connection.close()
- * Мы можем пойти двумя пусти использовать
+ * Мы можем пойти двумя путями и использовать
  * шаблон декоратор или использовать шаблон Proxy.
  *
  * Если мы используем шаблон декоратор. то нам нужно будет
@@ -31,9 +31,9 @@ public class ConnectionRollback {
     /**
      * Create connection with autocommit=false mode and rollback call,
      * when conneciton is closed.
-     * @param connection connection.
-     * @return Connection object.
-     * @throws SQLException possible exception.
+     *
+     *
+     *
      */
     public static Connection create(Connection connection) throws SQLException {
         connection.setAutoCommit(false);
